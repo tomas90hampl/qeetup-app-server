@@ -1,0 +1,57 @@
+{
+  "name": "qeetup-app-server",
+  "version": "0.0.1",
+  "description": "Application template for server GraphQL projects and implementation of application for Qeetup about GraphQL",
+  "repository": "git@github.com:qest-cz/qeetup-app-server.git",
+  "author": "Jindřich Máca <jindrich.maca@qest.cz>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --no-notify -r dotenv/config -r tsconfig-paths/register src/index.ts dotenv_config_path=config/.env",
+    "build": "tsc -p tsconfig.prod.json && link-module-alias",
+    "build:check": "tsc -p tsconfig.prod.json --noEmit && link-module-alias",
+    "start": "NODE_ENV=production node dist/index.js",
+    "clean": "concurrently 'rm -rf dist' 'rm -rf coverage'",
+    "tslint": "tslint -p tsconfig.json",
+    "tslint:fix": "tslint --fix -p tsconfig.json",
+    "prettier": "prettier all -c 'src/**/*.ts'",
+    "prettier:fix": "prettier all --write 'src/**/*.ts'",
+    "code:check": "concurrently -n 'pretty,lint,tsc:check' 'yarn prettier' 'yarn tslint' 'yarn build:check'",
+    "code:fix": "concurrently -n 'pretty,lint' 'yarn prettier:fix' 'yarn tslint:fix' ",
+    "generate": "graphql-codegen",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:update": "jest --updateSnapshot",
+    "test:coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "apollo-datasource": "^0.6.3",
+    "apollo-server": "^2.9.6",
+    "graphql": "^14.5.8",
+    "graphql-scalars": "^1.0.2"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.8.1",
+    "@graphql-codegen/typescript": "^1.8.1",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.12",
+    "apollo-server-testing": "^2.9.6",
+    "concurrently": "^5.0.0",
+    "dotenv": "^8.1.0",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "link-module-alias": "^1.2.0",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.1.0",
+    "ts-node-dev": "^1.0.0-pre.43",
+    "tsconfig-paths": "^3.9.0",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.6.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn code:fix",
+      "pre-push": "yarn code:check"
+    }
+  }
+}
