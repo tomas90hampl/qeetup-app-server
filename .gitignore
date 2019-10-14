@@ -1,0 +1,19 @@
+# Dependency directories
+node_modules/
+
+# Compiled output
+dist/
+
+# Generated code coverage
+coverage/
+
+# IDEs and editors
+.idea/
+.vscode/
+
+# Environment variables file
+config/*
+!config/*.example
+
+# Logs
+*.log
