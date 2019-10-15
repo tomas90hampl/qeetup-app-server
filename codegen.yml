@@ -1,1 +1,17 @@
 overwrite: true
+generates:
+  src/container/schema/interfaces.ts:
+    schema:
+      - src/container/schema/index.ts
+      - src/modules/graphql/**/schema/index.ts
+    hooks:
+      afterOneFileWrite:
+        - yarn tslint:fix
+        - yarn prettier:fix
+    plugins:
+      - typescript
+    config:
+      declarationKind: interface
+      skipTypename: true
+      namingConvention:
+        enumValues: change-case#upperCase

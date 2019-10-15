@@ -53,5 +53,10 @@
       "pre-commit": "yarn code:fix",
       "pre-push": "yarn code:check"
     }
-  }
+  },
+  "_moduleAliases": {
+    "@container": "dist/container",
+    "@graphql": "dist/modules/graphql"
+  },
+  "_moduleAliasIgnoreWarning": true
 }
