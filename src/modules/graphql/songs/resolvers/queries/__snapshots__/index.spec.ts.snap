@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Songs Queries should return all songs 1`] = `
+Object {
+  "songs": Array [
+    Object {
+      "artist": "September 87",
+      "audio": null,
+      "comments": Array [
+        Object {
+          "text": "This song is worth killing for",
+          "user": Object {
+            "avatar": "https://cdnb.artstation.com/p/assets/images/images/013/127/649/large/michael-papatsounis-johnwickfinal.jpg?1538170551",
+            "isArtist": null,
+            "name": "John Wick",
+          },
+        },
+      ],
+      "cover": "https://i.vimeocdn.com/video/526078435_1280x720.jpg",
+      "description": "This song is by September 87 and features Dream Fiend.",
+      "isLiked": true,
+      "listens": 145202,
+      "name": "Bad Dream Baby",
+      "tags": Array [
+        Object {
+          "isImportant": true,
+          "value": "New Synth Wave",
+        },
+        Object {
+          "isImportant": true,
+          "value": "🔥Popular",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Electronic",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Retro",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Outrun",
+        },
+      ],
+    },
+    Object {
+      "artist": "FM-84",
+      "audio": null,
+      "comments": null,
+      "cover": "https://i.redd.it/xvyfcvt7fvwz.jpg",
+      "description": "This song is by September 87 and features Dream Fiend.",
+      "isLiked": false,
+      "listens": 32000,
+      "name": "Running in the night",
+      "tags": Array [
+        Object {
+          "isImportant": true,
+          "value": "New Synth Wave",
+        },
+        Object {
+          "isImportant": true,
+          "value": "🔥 Popular",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Electronic",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Retro",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Outrun",
+        },
+      ],
+    },
+    Object {
+      "artist": "Mötley Crüe",
+      "audio": null,
+      "comments": null,
+      "cover": "https://townsquare.media/site/295/files/2019/02/MCscr.jpg?w=980&q=75",
+      "description": "This song is by September 87 and features Dream Fiend.",
+      "isLiked": true,
+      "listens": 1030002,
+      "name": "Kickstart my heart",
+      "tags": Array [
+        Object {
+          "isImportant": null,
+          "value": "Glam metal",
+        },
+        Object {
+          "isImportant": true,
+          "value": "🔥 Popular",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Heavy metal",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Hard Rock",
+        },
+      ],
+    },
+    Object {
+      "artist": "Pink Floyd",
+      "audio": null,
+      "comments": null,
+      "cover": "https://images-na.ssl-images-amazon.com/images/I/81aTawcGdmL._SL1500_.jpg",
+      "description": "Placeholder",
+      "isLiked": false,
+      "listens": 8398893,
+      "name": "Dark side of the moon",
+      "tags": Array [
+        Object {
+          "isImportant": true,
+          "value": "Progressive rock",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Rock",
+        },
+      ],
+    },
+    Object {
+      "artist": "The Glitch Mob",
+      "audio": null,
+      "comments": null,
+      "cover": "https://consequenceofsound.net/wp-content/uploads/2014/01/91vaxjhtjjl-_sl1500_.jpg?quality=80&w=807",
+      "description": "Placeholder",
+      "isLiked": true,
+      "listens": 490000,
+      "name": "Mind of a Beast",
+      "tags": Array [
+        Object {
+          "isImportant": true,
+          "value": "Glitch",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Electronic rock",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Dubstep",
+        },
+        Object {
+          "isImportant": null,
+          "value": "EDM",
+        },
+      ],
+    },
+  ],
+}
+`;
