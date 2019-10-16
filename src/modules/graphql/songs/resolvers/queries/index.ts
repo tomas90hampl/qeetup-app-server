@@ -1,5 +1,5 @@
 import { ResolverObject } from '@container/resolvers';
 
 export const queries: ResolverObject = {
-    test: (_, __, { dataSources: { helloWorld } }) => helloWorld.getText(),
+    songs: (_, __, { dataSources: { songs } }) => songs.getAll(),
 };

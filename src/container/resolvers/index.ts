@@ -1,9 +1,9 @@
-import { resolvers as helloWorld } from '@graphql/hello-world';
+import { resolvers as songs } from '@graphql/songs';
 import { Resolvers } from './interfaces';
 
 export { FieldResolver, ResolverObject, Resolvers } from './interfaces';
 
 export const resolvers: Resolvers = {
-    ...helloWorld,
-    Query: { ...helloWorld.Query },
+    ...songs,
+    Query: { ...songs.Query },
 };

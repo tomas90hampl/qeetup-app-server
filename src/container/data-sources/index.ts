@@ -1,9 +1,9 @@
-import { HelloWorld } from '@graphql/hello-world/data-sources';
+import { SongsDataSource } from '@graphql/songs/data-sources';
 
 export type DataSources = {
-    helloWorld: HelloWorld;
+    songs: SongsDataSource;
 };
 
 export const createDataSources = (): DataSources => ({
-    helloWorld: new HelloWorld(),
+    songs: new SongsDataSource(),
 });
