@@ -15,3 +15,5 @@ generates:
       skipTypename: true
       namingConvention:
         enumValues: change-case#upperCase
+      scalars:
+        NonNegativeInt: number

@@ -1,16 +1,53 @@
 import { gql } from 'apollo-server';
 
 export const typeDefs = gql`
+    directive @songExists on FIELD_DEFINITION
+
+    # ---------------------------------------------------------
+
     extend type Query {
         songs: [Song!]!
+        search(name: String!): [Song!]!
     }
 
+    # ---------------------------------------------------------
+
+    extend type Mutation {
+        setLike(songId: ID!, like: Toggle!): Song! @songExists
+        addComment(songId: ID!, comment: CommentInput!): Song! @songExists
+    }
+
+    # ---------------------------------------------------------
+
+    extend type Subscription {
+        commentAdded(songId: ID!): Comment! @songExists
+        listens(songId: ID!): NonNegativeInt! @songExists
+    }
+
+    # ---------------------------------------------------------
+
+    enum Toggle {
+        ADD
+        REMOVE
+    }
+
+    # ---------------------------------------------------------
+
+    interface User {
+        name: String!
+        avatar: String!
+        isArtist: Boolean
+    }
+
+    # ---------------------------------------------------------
+
     type Song {
+        id: ID!
         name: String!
         artist: String!
         cover: String!
         description: String!
-        listens: Int!
+        listens: NonNegativeInt!
         tags: [Tag!]!
         audio: String
         isLiked: Boolean
@@ -27,7 +64,26 @@ export const typeDefs = gql`
         text: String!
     }
 
-    type User {
+    type RegularUser implements User {
+        name: String!
+        avatar: String!
+        isArtist: Boolean
+    }
+
+    type ArtistUser implements User {
+        name: String!
+        avatar: String!
+        isArtist: Boolean
+    }
+
+    # ---------------------------------------------------------
+
+    input CommentInput {
+        user: UserInput!
+        text: String!
+    }
+
+    input UserInput {
         name: String!
         avatar: String!
         isArtist: Boolean

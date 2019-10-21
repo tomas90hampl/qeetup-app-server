@@ -1,9 +1,11 @@
-import { resolvers as songs } from '@graphql/songs';
+import { resolvers as songsResolvers } from '@graphql/songs';
+import { NonNegativeIntResolver } from 'graphql-scalars';
 import { Resolvers } from './interfaces';
 
 export { FieldResolver, ResolverObject, Resolvers } from './interfaces';
 
 export const resolvers: Resolvers = {
-    ...songs,
-    Query: { ...songs.Query },
+    NonNegativeInt: NonNegativeIntResolver,
+    ...songsResolvers,
+    Query: { ...songsResolvers.Query },
 };
