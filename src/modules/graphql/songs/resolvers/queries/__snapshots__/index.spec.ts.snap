@@ -1,5 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Songs Queries shloud find all songs with given name 1`] = `
+Object {
+  "search": Array [
+    Object {
+      "artist": "September 87",
+      "audio": null,
+      "comments": Array [
+        Object {
+          "text": "This song is worth killing for",
+          "user": Object {
+            "avatar": "https://cdnb.artstation.com/p/assets/images/images/013/127/649/large/michael-papatsounis-johnwickfinal.jpg?1538170551",
+            "isArtist": null,
+            "name": "John Wick",
+          },
+        },
+      ],
+      "cover": "https://i.vimeocdn.com/video/526078435_1280x720.jpg",
+      "description": "This song is by September 87 and features Dream Fiend.",
+      "isLiked": true,
+      "listens": 145202,
+      "name": "Bad Dream Baby",
+      "tags": Array [
+        Object {
+          "isImportant": true,
+          "value": "New Synth Wave",
+        },
+        Object {
+          "isImportant": true,
+          "value": "🔥 Popular",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Electronic",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Retro",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Outrun",
+        },
+      ],
+    },
+  ],
+}
+`;
+
 exports[`Songs Queries should return all songs 1`] = `
 Object {
   "songs": Array [

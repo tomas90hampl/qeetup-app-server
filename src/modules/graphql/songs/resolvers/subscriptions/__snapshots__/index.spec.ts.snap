@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Songs Subscriptions should subscribe to number of listeners 1`] = `
+Object {
+  "text": "Test comment",
+  "user": Object {
+    "avatar": "...",
+    "name": "test",
+  },
+}
+`;

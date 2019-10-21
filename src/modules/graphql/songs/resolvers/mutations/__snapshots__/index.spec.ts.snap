@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Songs Mutations should add comment to the song 1`] = `
+Object {
+  "addComment": Object {
+    "artist": "FM-84",
+    "audio": null,
+    "comments": Array [
+      Object {
+        "text": "Test comment",
+        "user": Object {
+          "avatar": "...",
+          "isArtist": null,
+          "name": "test",
+        },
+      },
+    ],
+    "cover": "https://i.redd.it/xvyfcvt7fvwz.jpg",
+    "description": "This song is by September 87 and features Dream Fiend.",
+    "isLiked": true,
+    "listens": 32000,
+    "name": "Running in the night",
+    "tags": Array [
+      Object {
+        "isImportant": true,
+        "value": "New Synth Wave",
+      },
+      Object {
+        "isImportant": true,
+        "value": "🔥 Popular",
+      },
+      Object {
+        "isImportant": null,
+        "value": "Electronic",
+      },
+      Object {
+        "isImportant": null,
+        "value": "Retro",
+      },
+      Object {
+        "isImportant": null,
+        "value": "Outrun",
+      },
+    ],
+  },
+}
+`;
+
+exports[`Songs Mutations should like the song 1`] = `
+Object {
+  "setLike": Object {
+    "artist": "FM-84",
+    "audio": null,
+    "comments": null,
+    "cover": "https://i.redd.it/xvyfcvt7fvwz.jpg",
+    "description": "This song is by September 87 and features Dream Fiend.",
+    "isLiked": true,
+    "listens": 32000,
+    "name": "Running in the night",
+    "tags": Array [
+      Object {
+        "isImportant": true,
+        "value": "New Synth Wave",
+      },
+      Object {
+        "isImportant": true,
+        "value": "🔥 Popular",
+      },
+      Object {
+        "isImportant": null,
+        "value": "Electronic",
+      },
+      Object {
+        "isImportant": null,
+        "value": "Retro",
+      },
+      Object {
+        "isImportant": null,
+        "value": "Outrun",
+      },
+    ],
+  },
+}
+`;
+
+exports[`Songs Mutations should unlike the song 1`] = `
+Object {
+  "setLike": Object {
+    "artist": "September 87",
+    "audio": null,
+    "comments": Array [
+      Object {
+        "text": "This song is worth killing for",
+        "user": Object {
+          "avatar": "https://cdnb.artstation.com/p/assets/images/images/013/127/649/large/michael-papatsounis-johnwickfinal.jpg?1538170551",
+          "isArtist": null,
+          "name": "John Wick",
+        },
+      },
+    ],
+    "cover": "https://i.vimeocdn.com/video/526078435_1280x720.jpg",
+    "description": "This song is by September 87 and features Dream Fiend.",
+    "isLiked": false,
+    "listens": 145202,
+    "name": "Bad Dream Baby",
+    "tags": Array [
+      Object {
+        "isImportant": true,
+        "value": "New Synth Wave",
+      },
+      Object {
+        "isImportant": true,
+        "value": "🔥 Popular",
+      },
+      Object {
+        "isImportant": null,
+        "value": "Electronic",
+      },
+      Object {
+        "isImportant": null,
+        "value": "Retro",
+      },
+      Object {
+        "isImportant": null,
+        "value": "Outrun",
+      },
+    ],
+  },
+}
+`;
