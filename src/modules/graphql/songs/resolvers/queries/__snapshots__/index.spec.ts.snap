@@ -5,17 +5,47 @@ Object {
   "search": Array [
     Object {
       "artist": "September 87",
-      "audio": null,
-      "comments": Array [
+      "audio": "BadDreamBaby",
+      "comments": null,
+      "cover": "https://i.vimeocdn.com/video/526078435_1280x720.jpg",
+      "description": "This song is by September 87 and features Dream Fiend.",
+      "isLiked": true,
+      "listens": 145202,
+      "name": "Bad Dream Baby",
+      "tags": Array [
         Object {
-          "text": "This song is worth killing for",
-          "user": Object {
-            "avatar": "https://cdnb.artstation.com/p/assets/images/images/013/127/649/large/michael-papatsounis-johnwickfinal.jpg?1538170551",
-            "isArtist": null,
-            "name": "John Wick",
-          },
+          "isImportant": true,
+          "value": "New Synth Wave",
+        },
+        Object {
+          "isImportant": true,
+          "value": "🔥 Popular",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Electronic",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Retro",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Outrun",
         },
       ],
+    },
+  ],
+}
+`;
+
+exports[`Songs Queries should find all songs with given name 1`] = `
+Object {
+  "search": Array [
+    Object {
+      "artist": "September 87",
+      "audio": "BadDreamBaby",
+      "comments": null,
       "cover": "https://i.vimeocdn.com/video/526078435_1280x720.jpg",
       "description": "This song is by September 87 and features Dream Fiend.",
       "isLiked": true,
@@ -53,22 +83,45 @@ Object {
   "songs": Array [
     Object {
       "artist": "September 87",
-      "audio": null,
-      "comments": Array [
-        Object {
-          "text": "This song is worth killing for",
-          "user": Object {
-            "avatar": "https://cdnb.artstation.com/p/assets/images/images/013/127/649/large/michael-papatsounis-johnwickfinal.jpg?1538170551",
-            "isArtist": null,
-            "name": "John Wick",
-          },
-        },
-      ],
+      "audio": "BadDreamBaby",
+      "comments": null,
       "cover": "https://i.vimeocdn.com/video/526078435_1280x720.jpg",
       "description": "This song is by September 87 and features Dream Fiend.",
       "isLiked": true,
       "listens": 145202,
       "name": "Bad Dream Baby",
+      "tags": Array [
+        Object {
+          "isImportant": true,
+          "value": "New Synth Wave",
+        },
+        Object {
+          "isImportant": true,
+          "value": "🔥 Popular",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Electronic",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Retro",
+        },
+        Object {
+          "isImportant": null,
+          "value": "Outrun",
+        },
+      ],
+    },
+    Object {
+      "artist": "The Midnight",
+      "audio": "LosAngeles",
+      "comments": null,
+      "cover": "https://scontent-prg1-1.xx.fbcdn.net/v/t1.0-9/44883276_2160020650889409_8949487783479607296_n.jpg?_nc_cat=107&_nc_oc=AQnVcG20lk3-m112Suw1y55PovPGTdDmScc_ENTqVQOBrZTl-giFBV71MEzLVvjl8rbazDD0qK55rK6859UkL4AI&_nc_ht=scontent-prg1-1.xx&oh=0e884e2a8643364267b2d42968551401&oe=5E255286",
+      "description": "Placeholder",
+      "isLiked": true,
+      "listens": 34000,
+      "name": "Los Angeles",
       "tags": Array [
         Object {
           "isImportant": true,
@@ -160,7 +213,7 @@ Object {
       "description": "Placeholder",
       "isLiked": false,
       "listens": 8398893,
-      "name": "Dark side of the moon",
+      "name": "Speak To Me",
       "tags": Array [
         Object {
           "isImportant": true,

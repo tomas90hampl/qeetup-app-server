@@ -3,8 +3,8 @@
 exports[`Songs Mutations should add comment to the song 1`] = `
 Object {
   "addComment": Object {
-    "artist": "FM-84",
-    "audio": null,
+    "artist": "The Midnight",
+    "audio": "LosAngeles",
     "comments": Array [
       Object {
         "text": "Test comment",
@@ -15,11 +15,11 @@ Object {
         },
       },
     ],
-    "cover": "https://i.redd.it/xvyfcvt7fvwz.jpg",
-    "description": "This song is by September 87 and features Dream Fiend.",
+    "cover": "https://scontent-prg1-1.xx.fbcdn.net/v/t1.0-9/44883276_2160020650889409_8949487783479607296_n.jpg?_nc_cat=107&_nc_oc=AQnVcG20lk3-m112Suw1y55PovPGTdDmScc_ENTqVQOBrZTl-giFBV71MEzLVvjl8rbazDD0qK55rK6859UkL4AI&_nc_ht=scontent-prg1-1.xx&oh=0e884e2a8643364267b2d42968551401&oe=5E255286",
+    "description": "Placeholder",
     "isLiked": true,
-    "listens": 32000,
-    "name": "Running in the night",
+    "listens": 34000,
+    "name": "Los Angeles",
     "tags": Array [
       Object {
         "isImportant": true,
@@ -49,14 +49,14 @@ Object {
 exports[`Songs Mutations should like the song 1`] = `
 Object {
   "setLike": Object {
-    "artist": "FM-84",
-    "audio": null,
+    "artist": "The Midnight",
+    "audio": "LosAngeles",
     "comments": null,
-    "cover": "https://i.redd.it/xvyfcvt7fvwz.jpg",
-    "description": "This song is by September 87 and features Dream Fiend.",
+    "cover": "https://scontent-prg1-1.xx.fbcdn.net/v/t1.0-9/44883276_2160020650889409_8949487783479607296_n.jpg?_nc_cat=107&_nc_oc=AQnVcG20lk3-m112Suw1y55PovPGTdDmScc_ENTqVQOBrZTl-giFBV71MEzLVvjl8rbazDD0qK55rK6859UkL4AI&_nc_ht=scontent-prg1-1.xx&oh=0e884e2a8643364267b2d42968551401&oe=5E255286",
+    "description": "Placeholder",
     "isLiked": true,
-    "listens": 32000,
-    "name": "Running in the night",
+    "listens": 34000,
+    "name": "Los Angeles",
     "tags": Array [
       Object {
         "isImportant": true,
@@ -87,17 +87,8 @@ exports[`Songs Mutations should unlike the song 1`] = `
 Object {
   "setLike": Object {
     "artist": "September 87",
-    "audio": null,
-    "comments": Array [
-      Object {
-        "text": "This song is worth killing for",
-        "user": Object {
-          "avatar": "https://cdnb.artstation.com/p/assets/images/images/013/127/649/large/michael-papatsounis-johnwickfinal.jpg?1538170551",
-          "isArtist": null,
-          "name": "John Wick",
-        },
-      },
-    ],
+    "audio": "BadDreamBaby",
+    "comments": null,
     "cover": "https://i.vimeocdn.com/video/526078435_1280x720.jpg",
     "description": "This song is by September 87 and features Dream Fiend.",
     "isLiked": false,
