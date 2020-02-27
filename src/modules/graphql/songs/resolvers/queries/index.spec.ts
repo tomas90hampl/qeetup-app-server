@@ -63,7 +63,7 @@ describe('Songs Queries', () => {
         expect(songs).toMatchSnapshot();
     });
 
-    it('shloud find all songs with given name', async () => {
+    it('should find all songs with given name', async () => {
         expect.assertions(1);
 
         const { query } = createApolloTestClient();
