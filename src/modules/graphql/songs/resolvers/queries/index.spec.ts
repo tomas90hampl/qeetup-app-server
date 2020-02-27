@@ -1,56 +1,25 @@
 import { createApolloTestClient } from '@container/apollo/test-hooks';
+import { SONG_FRAGMENT } from '@graphql/songs/resolvers/test-hooks';
 import { gql } from 'apollo-server';
 
 const ALL_SONGS = gql`
     query AllSongs {
         songs {
-            name
-            artist
-            cover
-            description
-            listens
-            tags {
-                value
-                isImportant
-            }
-            audio
-            isLiked
-            comments {
-                user {
-                    name
-                    avatar
-                    isArtist
-                }
-                text
-            }
+            ...SongFragment
         }
     }
+
+    ${SONG_FRAGMENT}
 `;
 
 const SEARCH_SONGS = gql`
     query SearchSongs($name: String!) {
         search(name: $name) {
-            name
-            artist
-            cover
-            description
-            listens
-            tags {
-                value
-                isImportant
-            }
-            audio
-            isLiked
-            comments {
-                user {
-                    name
-                    avatar
-                    isArtist
-                }
-                text
-            }
+            ...SongFragment
         }
     }
+
+    ${SONG_FRAGMENT}
 `;
 
 describe('Songs Queries', () => {
@@ -67,7 +36,10 @@ describe('Songs Queries', () => {
         expect.assertions(1);
 
         const { query } = createApolloTestClient();
-        const { data: songs } = await query({ query: SEARCH_SONGS, variables: { name: 'Bad' } });
+        const { data: songs } = await query({
+            query: SEARCH_SONGS,
+            variables: { name: 'Bad' },
+        });
 
         expect(songs).toMatchSnapshot();
     });

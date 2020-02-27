@@ -1,58 +1,27 @@
 import { createApolloTestClient } from '@container/apollo/test-hooks';
 import { CommentInput, Toggle } from '@container/schema';
 import { SongsDataSource } from '@graphql/songs/data-sources';
+import { SONG_FRAGMENT } from '@graphql/songs/resolvers/test-hooks';
 import { gql } from 'apollo-server';
 
 const SET_LIKE = gql`
     mutation SetLike($songId: ID!, $like: Toggle!) {
         setLike(songId: $songId, like: $like) {
-            name
-            artist
-            cover
-            description
-            listens
-            tags {
-                value
-                isImportant
-            }
-            audio
-            isLiked
-            comments {
-                user {
-                    name
-                    avatar
-                    isArtist
-                }
-                text
-            }
+            ...SongFragment
         }
     }
+
+    ${SONG_FRAGMENT}
 `;
 
 const ADD_COMMENT = gql`
     mutation AddComment($songId: ID!, $comment: CommentInput!) {
         addComment(songId: $songId, comment: $comment) {
-            name
-            artist
-            cover
-            description
-            listens
-            tags {
-                value
-                isImportant
-            }
-            audio
-            isLiked
-            comments {
-                user {
-                    name
-                    avatar
-                    isArtist
-                }
-                text
-            }
+            ...SongFragment
         }
     }
+
+    ${SONG_FRAGMENT}
 `;
 
 describe('Songs Mutations', () => {
@@ -65,7 +34,7 @@ describe('Songs Mutations', () => {
             variables: { songId: 'non-existing', like: Toggle.ADD },
         });
 
-        expect(errors).not.toBeNull();
+        expect(errors).not.toBeFalsy();
         expect(errors).toHaveLength(1);
         expect(errors![0].message).toMatch("Song with ID 'non-existing' does not exists.");
     });
