@@ -41,8 +41,13 @@ export interface MutationAddCommentArgs {
 }
 
 export interface Query {
+    song: Song;
     songs: Song[];
     search: Song[];
+}
+
+export interface QuerySongArgs {
+    id: Scalars['ID'];
 }
 
 export interface QuerySearchArgs {

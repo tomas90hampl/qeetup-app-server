@@ -6,6 +6,7 @@ export const typeDefs = gql`
     # ---------------------------------------------------------
 
     extend type Query {
+        song(id: ID!): Song! @songExists
         songs: [Song!]!
         search(name: String!): [Song!]!
     }

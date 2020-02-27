@@ -2,7 +2,7 @@ import { InMemoryDataSource } from '@container/data-sources/in-memory';
 import { Comment, CommentInput, Song, Toggle } from '@container/schema';
 
 export class SongsDataSource extends InMemoryDataSource {
-    private async getById(songId: string) {
+    async getById(songId: string) {
         // NOTE: Hack to always return a song, because song existence is ensured by a directive.
         return songs[songs.findIndex((song) => song.id === songId)];
     }
