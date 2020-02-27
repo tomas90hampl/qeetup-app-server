@@ -39,6 +39,43 @@ Object {
 }
 `;
 
+exports[`Songs Queries should return a song by its ID 1`] = `
+Object {
+  "song": Object {
+    "artist": "The Midnight",
+    "audio": "LosAngeles",
+    "comments": null,
+    "cover": "https://scontent-prg1-1.xx.fbcdn.net/v/t1.0-9/44883276_2160020650889409_8949487783479607296_n.jpg?_nc_cat=107&_nc_oc=AQnVcG20lk3-m112Suw1y55PovPGTdDmScc_ENTqVQOBrZTl-giFBV71MEzLVvjl8rbazDD0qK55rK6859UkL4AI&_nc_ht=scontent-prg1-1.xx&oh=0e884e2a8643364267b2d42968551401&oe=5E255286",
+    "description": "Placeholder",
+    "isLiked": true,
+    "listens": 34000,
+    "name": "Los Angeles",
+    "tags": Array [
+      Object {
+        "isImportant": true,
+        "value": "New Synth Wave",
+      },
+      Object {
+        "isImportant": true,
+        "value": "🔥 Popular",
+      },
+      Object {
+        "isImportant": null,
+        "value": "Electronic",
+      },
+      Object {
+        "isImportant": null,
+        "value": "Retro",
+      },
+      Object {
+        "isImportant": null,
+        "value": "Outrun",
+      },
+    ],
+  },
+}
+`;
+
 exports[`Songs Queries should return all songs 1`] = `
 Object {
   "songs": Array [
