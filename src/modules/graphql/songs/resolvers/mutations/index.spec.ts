@@ -40,41 +40,43 @@ describe('Songs Mutations', () => {
     });
 
     it('should like the song', async () => {
-        expect.assertions(2);
+        expect.assertions(3);
 
         const songs = new SongsDataSource();
         const allSongs = await songs.getAll();
         const songId = allSongs[1].id;
 
         const { mutate } = createApolloTestClient();
-        const { data: song } = await mutate({
+        const { data: song, errors } = await mutate({
             mutation: SET_LIKE,
             variables: { songId, like: Toggle.ADD },
         });
 
+        expect(errors).toBeFalsy();
         expect(song!.setLike.isLiked).toBe(true);
         expect(song).toMatchSnapshot();
     });
 
     it('should unlike the song', async () => {
-        expect.assertions(2);
+        expect.assertions(3);
 
         const songs = new SongsDataSource();
         const allSongs = await songs.getAll();
         const songId = allSongs[0].id;
 
         const { mutate } = createApolloTestClient();
-        const { data: song } = await mutate({
+        const { data: song, errors } = await mutate({
             mutation: SET_LIKE,
             variables: { songId, like: Toggle.REMOVE },
         });
 
+        expect(errors).toBeFalsy();
         expect(song!.setLike.isLiked).toBe(false);
         expect(song).toMatchSnapshot();
     });
 
     it('should add comment to the song', async () => {
-        expect.assertions(2);
+        expect.assertions(3);
 
         const songs = new SongsDataSource();
         const allSongs = await songs.getAll();
@@ -89,11 +91,12 @@ describe('Songs Mutations', () => {
         };
 
         const { mutate } = createApolloTestClient();
-        const { data: song } = await mutate({
+        const { data: song, errors } = await mutate({
             mutation: ADD_COMMENT,
             variables: { songId, comment },
         });
 
+        expect(errors).toBeFalsy();
         expect(song!.addComment.comments[0].text).toMatch(comment.text);
         expect(song).toMatchSnapshot();
     });

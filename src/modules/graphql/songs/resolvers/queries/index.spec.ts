@@ -49,39 +49,42 @@ describe('Songs Queries', () => {
     });
 
     it('should return a song by its ID', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
 
         const songs = new SongsDataSource();
         const allSongs = await songs.getAll();
         const songId = allSongs[1].id;
 
         const { query } = createApolloTestClient();
-        const { data: song } = await query({
+        const { data: song, errors } = await query({
             query: SONG_BY_ID,
             variables: { id: songId },
         });
 
+        expect(errors).toBeFalsy();
         expect(song).toMatchSnapshot();
     });
 
     it('should return all songs', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
 
         const { query } = createApolloTestClient();
-        const { data: songs } = await query({ query: ALL_SONGS });
+        const { data: songs, errors } = await query({ query: ALL_SONGS });
 
+        expect(errors).toBeFalsy();
         expect(songs).toMatchSnapshot();
     });
 
     it('should find all songs with given name', async () => {
-        expect.assertions(1);
+        expect.assertions(2);
 
         const { query } = createApolloTestClient();
-        const { data: songs } = await query({
+        const { data: songs, errors } = await query({
             query: SEARCH_SONGS,
             variables: { name: 'Bad' },
         });
 
+        expect(errors).toBeFalsy();
         expect(songs).toMatchSnapshot();
     });
 });
