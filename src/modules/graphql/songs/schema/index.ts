@@ -6,7 +6,7 @@ export const typeDefs = gql`
     # ---------------------------------------------------------
 
     extend type Query {
-        song(id: ID!): Song! @songExists
+        song(id: ID!): Song!
         songs: [Song!]!
         search(name: String!): [Song!]!
     }
@@ -14,8 +14,8 @@ export const typeDefs = gql`
     # ---------------------------------------------------------
 
     extend type Mutation {
-        setLike(songId: ID!, like: Toggle!): Song! @songExists
-        addComment(songId: ID!, comment: CommentInput!): Song! @songExists
+        setLike(songId: ID!, like: Toggle!): Song!
+        addComment(songId: ID!, comment: CommentInput!): Song!
     }
 
     # ---------------------------------------------------------

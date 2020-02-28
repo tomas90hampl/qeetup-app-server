@@ -1,10 +1,16 @@
 import { InMemoryDataSource } from '@container/data-sources/in-memory';
 import { Comment, CommentInput, Song, Toggle } from '@container/schema';
+import { UserInputError } from 'apollo-server';
 
 export class SongsDataSource extends InMemoryDataSource {
     async getById(songId: string) {
-        // NOTE: Hack to always return a song, because song existence is ensured by a directive.
-        return songs[songs.findIndex((song) => song.id === songId)];
+        const song = songs.find(({ id }) => id === songId);
+
+        if (!song) {
+            throw new UserInputError(`Song with ID '${songId}' does not exists.`, { invalidSongId: songId });
+        }
+
+        return song;
     }
 
     async getAll() {
@@ -17,10 +23,6 @@ export class SongsDataSource extends InMemoryDataSource {
 
     async searchByName(name: string) {
         return songs.filter((song) => song.name.includes(name));
-    }
-
-    async exist(songId: string) {
-        return Boolean(songs.find((song) => song.id === songId));
     }
 
     async setLike(songId: string, like: Toggle) {

@@ -1,29 +1,31 @@
-import { Context } from '@container/apollo';
 import { GraphQLField } from '@container/directives';
-import { SchemaDirectiveVisitor, UserInputError } from 'apollo-server';
+import { GraphQLFieldResolver } from '@container/directives/interfaces';
+import { ApolloError, SchemaDirectiveVisitor } from 'apollo-server';
 import { defaultFieldResolver } from 'graphql';
 
+type Args = { songId?: string };
+
 export class SongExistenceDirective extends SchemaDirectiveVisitor {
-    visitFieldDefinition(field: GraphQLField<{ id?: string; songId?: string }>) {
+    visitFieldDefinition(field: GraphQLField<Args>): void {
         const { resolve = defaultFieldResolver, subscribe } = field;
-        field.resolve = async (...args) => {
-            const [, { id, songId }, context] = args;
-            await validateSongExistence(id ?? songId ?? null, context);
-            return resolve.apply(field, args);
-        };
-
+        field.resolve = applyDirective(field, resolve);
         if (!subscribe) return;
-
-        field.subscribe = async (...args) => {
-            const [, { id, songId }, context] = args;
-            await validateSongExistence(id ?? songId ?? null, context);
-            return subscribe.apply(field, args);
-        };
+        field.subscribe = applyDirective(field, subscribe);
     }
 }
 
-async function validateSongExistence(songId: string | null, { dataSources: { songs } }: Context) {
-    if (!songId || !(await songs.exist(songId))) {
-        throw new UserInputError(`Song with ID '${songId}' does not exists.`, { invalidSongId: songId });
-    }
+function applyDirective(field: GraphQLField<Args>, resolver: GraphQLFieldResolver<Args>) {
+    return (async (...resolverArgs) => {
+        const [, { songId }, context] = resolverArgs;
+        const {
+            dataSources: { songs },
+        } = context;
+
+        if (!songId) {
+            throw new ApolloError('Invalid use of SongExistenceDirective field must contain "songId" argument.');
+        }
+
+        await songs.getById(songId); // Test if a song exists
+        return resolver.apply(field, resolverArgs);
+    }) as GraphQLFieldResolver<Args>;
 }
